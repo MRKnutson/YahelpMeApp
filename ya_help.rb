@@ -64,7 +64,7 @@ res2 = {
 }
 
 @users = [user1,user2]
-@restaraunts = [res1,res2]
+@restaurants = [res1,res2]
 
 # access user1 name through user1
 def get_name(user)
@@ -74,8 +74,8 @@ end
 get_name(user1)
 
 # access user1 name through res2 (user1 data is in reviews)
-def get_nested_name(restaraunt)
-  user_id = restaraunt[:reviews][0][:user_id]
+def get_nested_name(restaurant)
+  user_id = restaurant[:reviews][0][:user_id]
   user_id.class
   user = @users.find { |users| users[:id] == user_id }
   user[:name]
@@ -85,8 +85,8 @@ get_nested_name(res1)
 
 
 # access res1 reviews
-def access_reviews(restaraunt)
-  restaraunt[:reviews]
+def access_reviews(restaurant)
+  restaurant[:reviews]
 end
 
 access_reviews(res1)
@@ -96,21 +96,21 @@ access_reviews(res1)
 # this will output an array of hashes where each hash is a dish the restaraunt serves including the name, the price, and an array of ingredients
 
 # print out just the name or res1 dishes (each loop)
-def restaraunt_menu(restaraunt)
+def restaurant_menu(restaurant)
   menu = []
-  restaraunt[:dishes].each do |dish|
+  restaurant[:dishes].each do |dish|
     menu<<(dish[:name])
   end
   menu
 end
 
-restaraunt_menu(res1)
+restaurant_menu(res1)
 
 # print out just the name or res1 dishes along with ingredients (nested each loop)
 
-def menu_with_ingredients(restaraunt)
+def menu_with_ingredients(restaurant)
   menu = []
-  restaraunt[:dishes].each do |dish|
+  restaurant[:dishes].each do |dish|
     menu.push("#{dish[:name]} contains ")
     dish[:ingredients].each do |ingredient|
       menu.push("#{ingredient} ")
@@ -192,8 +192,8 @@ new_res = {
 }
 
 def add_res(new_res)
-  @restaraunts.push(new_res)
-  @restaraunts
+  @restaurants.push(new_res)
+  @restaurants
 end
 
 add_res(new_res)
@@ -201,9 +201,9 @@ add_res(new_res)
 #      Update: a  method that takes restaurants and updates that to your array
 
 def update_res(res, change, new_val)
-  index = @restaraunts.find_index(res)
-  @restaraunts[index][change] = new_val
-  @restaraunts
+  index = @restaurants.find_index(res)
+  @restaurants[index][change] = new_val
+  @restaurants
 end
 
 update_res(res1, :name, "Angelo's cantina")
@@ -211,9 +211,9 @@ update_res(res1, :name, "Angelo's cantina")
 #      Deletes a method that deletes res from arr
 
 def delete_res(res)
-  index = @restaraunts.find_index(res)
-  @restaraunts.delete_at(index)
-  @restaraunts
+  index = @restaurants.find_index(res)
+  @restaurants.delete_at(index)
+  @restaurants
 end
 
 delete_res(res1)
@@ -224,7 +224,7 @@ def highly_rated (restaurants)
   highly_rated_restaraunts = restaurants.select {|res| res[:likes] > 500}
 end
 
-highly_rated(@restaraunts)
+highly_rated(@restaurants)
 
 
 # I want to think of ideas simple/hard and add them in slack
