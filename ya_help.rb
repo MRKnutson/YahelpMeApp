@@ -141,7 +141,7 @@ res[:dishes].each do |dish|
     ingredient_list.push("#{ingredient}")
     end
   ingredients_string = ingredient_list.join(' and ')
-  menu.push("#{dish[:name]}:\n    contains #{ingredients_string}\n    Price: #{dish[:price]}\n")
+  menu.push("#{dish[:name]}:\n    contains #{ingredients_string}\n    Price: $#{dish[:price]}\n")
   end
   menu.join
 end
@@ -161,10 +161,41 @@ def average_review(res)
   average_review = ratings_total / num_ratings
 end
 
-p average_review(res2)
+average_review(res2)
 
 # create an array of restaurants and do CRUD actions
+
+# array created above
+
 # Create method  that takes a restaurant and adds to your array
+
+new_res = {
+  id: 3,
+  name: "Tony's",
+  location: {
+    city: "Kodiak",
+    state: "AK",
+  },
+  delivery: false,
+  days_open: "mon,tues,wed,thur,fri,sat",
+  likes: 12,
+  dishes: [
+    { name: "Burger", price: 16.85, ingredients: ["Burger", "Bun", "Lettuce"] },
+    { name: "Salad", price: 12.95, ingredients: ["lettuce", "Cheese", "Dressing"] },
+    { name: "King Crab", price: 52.95, ingredients: ["Crab", "Lemon-Butter", "Fries"] },
+
+  ],
+  reviews: ARRAY OF HASHES [
+    {user_id: 1, rating: 2},
+    {user_id: 2, rating: 1},
+  ]
+}
+
+def add_res(new_res)
+
+end
+
+
 #      Update: a  method that takes restaurants and updates that to your array
 #      Deletes a method that deletes res from arr
 # loop through your restaurants and return those with likes > 500 (select/filter)
