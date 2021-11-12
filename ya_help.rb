@@ -129,13 +129,28 @@ def print_user(user)
   end 
 end
 
-p print_user(user2)
+print_user(user2)
 
 # create a method that takes a res and returns the menu of that res
 
+def print_menu (res)
+menu = []
+res[:dishes].each do |dish|
+  ingredient_list = []
+  dish[:ingredients].each do |ingredient|
+    ingredient_list.push("#{ingredient}")
+    end
+  ingredients_string = ingredient_list.join(' and ')
+  menu.push("#{dish[:name]}:\n    contains #{ingredients_string}\n    Price: #{dish[:price]}\n")
+  end
+  menu.join
+end
+
+print_menu(res1)
+
+# create a function that takes a res and returns average review
 
 
-# create that takes a res and returns average review
 # create an array of restaurants and do CRUD actions
 # Create method  that takes a restaurant and adds to your array
 #      Update: a  method that takes restaurants and updates that to your array
