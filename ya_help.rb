@@ -206,13 +206,17 @@ def update_res(res, change, new_val)
   @restaraunts
 end
 
-p update_res(res1, :name, "Angelo's cantina")
-
-
+update_res(res1, :name, "Angelo's cantina")
 
 #      Deletes a method that deletes res from arr
 
+def delete_res(res)
+  index = @restaraunts.find_index(res)
+  @restaraunts.delete_at(index)
+  @restaraunts
+end
 
+delete_res(res1)
 
 # loop through your restaurants and return those with likes > 500 (select/filter)
 
