@@ -63,7 +63,8 @@ res2 = {
   ],
 }
 
-
+@users = [user1,user2]
+@restaraunts = [res1,res2]
 
 # access user1 name through user1
 def get_name(user)
@@ -73,7 +74,6 @@ end
 get_name(user1)
 
 # access user1 name through res2 (user1 data is in reviews)
-@users = [user1,user2]
 def get_nested_name(restaraunt)
   user_id = restaraunt[:reviews][0][:user_id]
   user_id.class
@@ -89,7 +89,7 @@ def access_reviews(restaraunt)
   restaraunt[:reviews]
 end
 
-p access_reviews(res1)
+access_reviews(res1)
 
 # what does this output res1[:dishes]
 
@@ -122,12 +122,25 @@ end
 menu_with_ingredients(res1)
 
 # create a function that takes a user and return a string with the users name and id
+
+def print_user(user)
+  if @users.include?(user)
+    "#{user[:name]} has the id #{user[:id]}"
+  end 
+end
+
+p print_user(user2)
+
 # create a method that takes a res and returns the menu of that res
+
+
+
 # create that takes a res and returns average review
 # create an array of restaurants and do CRUD actions
-# a simple that takes a restaurants and adds to your array
-#      a simple that takes restaurants and updates that to your array
+# Create method  that takes a restaurant and adds to your array
+#      Update: a  method that takes restaurants and updates that to your array
+#      Deletes a method that deletes res from arr
 # loop through your restaurants and return those with likes > 500 (select/filter)
-# I want to think of ideas simple/hard and through them in slack
+# I want to think of ideas simple/hard and add them in slack
 # more to come
-# No interaction with terminal
+# No interaction with terminal 
