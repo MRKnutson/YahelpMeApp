@@ -185,18 +185,23 @@ new_res = {
     { name: "King Crab", price: 52.95, ingredients: ["Crab", "Lemon-Butter", "Fries"] },
 
   ],
-  reviews: ARRAY OF HASHES [
+  reviews: [
     {user_id: 1, rating: 2},
     {user_id: 2, rating: 1},
   ]
 }
 
 def add_res(new_res)
-
+  @restaraunts.push(new_res)
+  @restaraunts
 end
 
+add_res(new_res)
 
 #      Update: a  method that takes restaurants and updates that to your array
+
+
+
 #      Deletes a method that deletes res from arr
 # loop through your restaurants and return those with likes > 500 (select/filter)
 # I want to think of ideas simple/hard and add them in slack
