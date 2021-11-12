@@ -150,6 +150,18 @@ print_menu(res1)
 
 # create a function that takes a res and returns average review
 
+def average_review(res)
+  ratings = []
+  res[:reviews].each do |review|
+    ratings.push(review[:rating])
+  end
+  ratings
+  ratings_total = ratings.reduce(:+)
+  num_ratings = ratings.length
+  average_review = ratings_total / num_ratings
+end
+
+p average_review(res2)
 
 # create an array of restaurants and do CRUD actions
 # Create method  that takes a restaurant and adds to your array
