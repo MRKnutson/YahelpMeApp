@@ -200,10 +200,29 @@ add_res(new_res)
 
 #      Update: a  method that takes restaurants and updates that to your array
 
+def update_res(res, change, new_val)
+  index = @restaraunts.find_index(res)
+  @restaraunts[index][change] = new_val
+  @restaraunts
+end
+
+p update_res(res1, :name, "Angelo's cantina")
+
 
 
 #      Deletes a method that deletes res from arr
+
+
+
 # loop through your restaurants and return those with likes > 500 (select/filter)
+
+def highly_rated (restaurants)
+  highly_rated_restaraunts = restaurants.select {|res| res[:likes] > 500}
+end
+
+highly_rated(@restaraunts)
+
+
 # I want to think of ideas simple/hard and add them in slack
 # more to come
 # No interaction with terminal 
