@@ -16,15 +16,15 @@
 //     {user_id: INTEGER *id of user object, rating: INTEGER 0-5}
 //   ]
 // }
-user1 = {
+let user1 = {
   id: 1,
   name: "Tony",
-}
-user2 = {
+};
+let user2 = {
   id: 2,
   name: "Sally",
-}
-res1 = {
+};
+let res1 = {
   id: 1,
   name: "Spicy Thai",
   location: {
@@ -42,8 +42,8 @@ res1 = {
     { user_id: 1, rating: 5 },
     { user_id: 2, rating: 3 },
   ],
-}
-res2 = {
+};
+let res2 = {
   id: 2,
   name: "Albertos",
   location: {
@@ -61,13 +61,17 @@ res2 = {
     { user_id: 1, rating: 2 },
     { user_id: 2, rating: 4 },
   ],
-}
+};
 
-@users = [user1,user2]
-@restaurants = [res1,res2]
+let users = [user1,user2];
+let restaurants = [res1,res2];
 
 // access user1 name through user1
+const get_name = (user)=> {
+  return user.name;
+};
 
+console.log(get_name(user1));
 
 
 
