@@ -112,6 +112,18 @@ console.log(restaurantMenu(res1));
 
 // print out just the name on res1 dishes along with ingredients (nested each loop)
 
+const menuWithIngredients = (restaurant) => {
+  let menu = [];
+  restaurant.dishes.forEach((dish)=> {
+    menu.push(`${dish.name} contains `)
+    dish.ingredients.forEach((ingredient)=>{
+      menu.push(`${ingredient} `)
+    });
+  });
+  return menu.join('')
+};
+
+console.log(menuWithIngredients(res1));
 
 
 // create a function that takes a user and returns a string with the users name and id
