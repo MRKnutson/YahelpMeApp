@@ -67,17 +67,20 @@ let users = [user1,user2];
 let restaurants = [res1,res2];
 
 // access user1 name through user1
-const get_name = (user)=> {
+const getName = (user)=> {
   return user.name;
 };
 
-console.log(get_name(user1));
-
-
+console.log(getName(user1));
 
 // access user1 name through res2 (user1 data is in reviews)
+const getNestedName = (restaurant) => {
+  let userID = restaurant.reviews[0].user_id
+  let user = users.find((users) => { return users.id === userID });
+  return user.name;
+};
 
-
+console.log(getNestedName(res1));
 
 
 // access res1 reviews
