@@ -103,9 +103,9 @@ access_reviews(res1)
 def restaurant_menu(restaurant)
   menu = []
   restaurant[:dishes].each do |dish|
-    menu<<(dish[:name])
+    menu<<(" #{dish[:name]}: #{dish[:price]}")
   end
-  menu
+  menu.join("\n")
 end
 
 restaurant_menu(res1)

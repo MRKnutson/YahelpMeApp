@@ -97,11 +97,18 @@ console.log(accessReviews(res1));
 
 // what does this output: res1[:dishes]
 
-
+// this will output an array of hashes where each hash is a dish the restaraunt serves including the name, the price, and an array of ingredients
 
 // print out just the name on res1 dishes (each loop)
+const restaurantMenu =(restaurant) => {
+  menu =[];
+  restaurant.dishes.forEach((dish) => {
+    menu.push(`${dish.name}: ${dish.price}`)
+  });
+  return menu.join('\n');
+};
 
-
+console.log(restaurantMenu(res1));
 
 // print out just the name on res1 dishes along with ingredients (nested each loop)
 
