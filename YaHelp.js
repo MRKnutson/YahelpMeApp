@@ -80,13 +80,20 @@ const getNestedName = (restaurant) => {
   return user.name;
 };
 
-console.log(getNestedName(res1));
+console.log(getNestedName(res2));
+
 
 
 // access res1 reviews
+const accessReviews = (restaurant) => {
+  let reviews =[];
+  restaurant.reviews.forEach((review) => { 
+    reviews.push(`User ${review.user_id} gave this restaurant ${review.rating} stars`) }
+  );
+  return reviews.join('\n')
+};
 
-
-
+console.log(accessReviews(res1));
 
 // what does this output: res1[:dishes]
 

@@ -81,12 +81,16 @@ def get_nested_name(restaurant)
   user[:name]
 end
 
-get_nested_name(res1) 
+get_nested_name(res2) 
 
 
 # access res1 reviews
 def access_reviews(restaurant)
-  restaurant[:reviews]
+  reviews = []
+  restaurant[:reviews].each do |review|
+    reviews.push("User #{review[:user_id]} gave this restaurant #{review[:rating]} stars")
+  end
+  reviews.join("\n")
 end
 
 access_reviews(res1)
