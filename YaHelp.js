@@ -154,8 +154,16 @@ console.log(printMenu(res1));
 
 // create a function that takes a res and returns average review
 
+const averageReview = (res) => {
+  let ratings = [];
+  res.reviews.forEach((review)=>{ratings.push(review.rating)});
+  let ratingsTotal = ratings.reduce((total, num) => { return total + num }, 0);
+  let numRatings = ratings.length;
+  let averageReview = ratingsTotal/numRatings;
+  return averageReview;
+};
 
-
+console.log(averageReview(res2));
 
 // create an array of restaurants and do CRUD (Create, Read, Update, Destroy) actions on that array
 
