@@ -243,6 +243,12 @@ p highly_rated(@restaurants)
 
 # I want to think of ideas simple/hard and add them in slack
 
+def sort_rest
+  @restaurants.sort_by{ |restaurant| restaurant[:likes] }
+  @restaurants
+end
+
+puts sort_rest
 # Implemented many ideas above as I thought of them (e.g., different methods to display data instead of always returning simple arrays. )
 
 # more to come
