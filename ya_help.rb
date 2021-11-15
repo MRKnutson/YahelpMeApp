@@ -242,5 +242,8 @@ highly_rated(@restaurants)
 
 
 # I want to think of ideas simple/hard and add them in slack
+
+# Implemented many ideas above as I thought of them (e.g., different methods to display data instead of always returning simple arrays. )
+
 # more to come
 # No interaction with terminal 

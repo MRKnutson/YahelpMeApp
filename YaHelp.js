@@ -215,13 +215,13 @@ console.log(dispRes(res2));
 
 //      Update: a  method that takes restaurants and updates that to your array
 
-// const updateRes = (res, uchange, newVal) => {
-//   let index = restaurants.findIndex((restaurant)=>{ return restaurant === res});
-//   restaurants[index].name = newVal;
-//   return restaurants;
-// };
+const updateRes = (res, newVal) => {
+  let index = restaurants.findIndex((restaurant)=>{ return restaurant === res});
+  restaurants[index].name = newVal;
+  return restaurants;
+};
 
-// console.log(updateRes(res1, change, "Angelo's Corner"));
+console.log(updateRes(res1, "Angelo's Corner"));
 
 //      Delete: a method that deletes res from arr
 
@@ -242,7 +242,7 @@ const highlyRated = (restaurants) => {
 console.log(highlyRated(restaurants));
 // I want you to think of ideas simple/hard and try implementing them
 
-
+// Implemented many ideas above as I thought of them (e.g., different methods to display data instead of always returning simple arrays. )
 
 // more to come
 // No interaction with the terminal need for this assignment
