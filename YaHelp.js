@@ -125,11 +125,15 @@ const menuWithIngredients = (restaurant) => {
 
 console.log(menuWithIngredients(res1));
 
-
 // create a function that takes a user and returns a string with the users name and id
 
 
+const printUser = (user) => {
+  if(users.includes(user)){
+  return `${user.name} has the id ${user.id}`};
+};
 
+console.log(printUser(user2));
 
 // create a method that takes a res and returns the menu of that res
 
