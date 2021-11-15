@@ -202,6 +202,16 @@ end
 
 add_res(new_res)
 
+# Read: a method that displays all res info
+
+def disp_res(res)
+index = @restaurants.find_index(res)
+menu = print_menu(res)
+ave_review = average_review(res)
+"#{@restaurants[index][:name]} is located in #{@restaurants[index][:location][:city]}, #{@restaurants[index][:location][:state]} and is open #{@restaurants[index][:days_open]}. \n number of likes: #{@restaurants[index][:likes]}\nAverage Review: #{ave_review} stars\nMenu:#{menu}" 
+end
+
+p disp_res(res1)
 #      Update: a  method that takes restaurants and updates that to your array
 
 def update_res(res, change, new_val)

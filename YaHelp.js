@@ -204,11 +204,24 @@ console.log(addRes(newRes));
 
 // Read: a method that display all res info
 
+const dispRes = (res) => {
+  let index = restaurants.findIndex((restaurant) => {return restaurant === res});
+  let menu = printMenu(res);
+  let aveRev = averageReview(res);
+  return `${restaurants[index].name} is located in ${restaurants[index].location.city}, ${restaurants[index].location.state} and is open ${restaurants[index].days_open}. \n number of likes: ${restaurants[index].likes}\nAverage Review: ${aveRev} stars \nMenu:${menu}\n`;
+};
 
+console.log(dispRes(res2));
 
 //      Update: a  method that takes restaurants and updates that to your array
 
+// const updateRes = (res, uchange, newVal) => {
+//   let index = restaurants.findIndex((restaurant)=>{ return restaurant === res});
+//   restaurants[index].name = newVal;
+//   return restaurants;
+// };
 
+// console.log(updateRes(res1, change, "Angelo's Corner"));
 
 //      Delete: a method that deletes res from arr
 
