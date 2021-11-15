@@ -225,8 +225,13 @@ console.log(dispRes(res2));
 
 //      Delete: a method that deletes res from arr
 
+const deleteRes = (res) => {
+  let index = restaurants.findIndex((restaurant) => {return restaurant === res });
+  restaurants.splice(index, 1);
+  return restaurants
+};
 
-
+console.log(deleteRes(res1));
 // loop through your restaurants and return those with likes > 500 (select/filter)
 
 
