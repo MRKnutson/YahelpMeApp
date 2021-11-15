@@ -71,7 +71,7 @@ def get_name(user)
   return user[:name]
 end
 
-get_name(user1)
+p get_name(user1)
 
 # access user1 name through res2 (user1 data is in reviews)
 def get_nested_name(restaurant)
@@ -81,7 +81,7 @@ def get_nested_name(restaurant)
   user[:name]
 end
 
-get_nested_name(res2) 
+p get_nested_name(res2) 
 
 
 # access res1 reviews
@@ -93,7 +93,7 @@ def access_reviews(restaurant)
   reviews.join("\n")
 end
 
-access_reviews(res1)
+p access_reviews(res1)
 
 # what does this output res1[:dishes]
 
@@ -108,7 +108,7 @@ def restaurant_menu(restaurant)
   menu.join("\n")
 end
 
-restaurant_menu(res1)
+p restaurant_menu(res1)
 
 # print out just the name or res1 dishes along with ingredients (nested each loop)
 
@@ -123,7 +123,7 @@ def menu_with_ingredients(restaurant)
   menu.join
 end
 
-menu_with_ingredients(res1)
+p menu_with_ingredients(res1)
 
 # create a function that takes a user and return a string with the users name and id
 
@@ -133,7 +133,7 @@ def print_user(user)
   end 
 end
 
-print_user(user2)
+p print_user(user2)
 
 # create a method that takes a res and returns the menu of that res
 
@@ -150,7 +150,7 @@ res[:dishes].each do |dish|
   menu.join
 end
 
-print_menu(res1)
+p print_menu(res1)
 
 # create a function that takes a res and returns average review
 
@@ -165,7 +165,7 @@ def average_review(res)
   average_review = ratings_total / num_ratings
 end
 
-average_review(res2)
+p average_review(res2)
 
 # create an array of restaurants and do CRUD actions
 
@@ -200,7 +200,7 @@ def add_res(new_res)
   @restaurants
 end
 
-add_res(new_res)
+p add_res(new_res)
 
 # Read: a method that displays all res info
 
@@ -220,7 +220,7 @@ def update_res(res, change, new_val)
   @restaurants
 end
 
-update_res(res1, :name, "Angelo's cantina")
+p update_res(res1, :name, "Angelo's cantina")
 
 #      Deletes a method that deletes res from arr
 
@@ -230,7 +230,7 @@ def delete_res(res)
   @restaurants
 end
 
-delete_res(res1)
+p delete_res(res2)
 
 # loop through your restaurants and return those with likes > 500 (select/filter)
 
@@ -238,7 +238,7 @@ def highly_rated (restaurants)
   highly_rated_restaraunts = restaurants.select {|res| res[:likes] > 500}
 end
 
-highly_rated(@restaurants)
+p highly_rated(@restaurants)
 
 
 # I want to think of ideas simple/hard and add them in slack
