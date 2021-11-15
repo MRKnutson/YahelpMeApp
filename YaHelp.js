@@ -234,13 +234,13 @@ const deleteRes = (res) => {
 console.log(deleteRes(res2));
 // loop through your restaurants and return those with likes > 500 (select/filter)
 
-// const highlyRated = (restaurants) => {
-//   highlyRatedRestaurants = restaurants.filter((restaurant)=>{return restaurant.likes > 500});
-//   return highlyRatedRestaurants
-// };
+const highlyRated = (restaurants) => {
+  highlyRatedRestaurants = restaurants.filter((restaurant)=>{return restaurant.likes > 500});
+  return highlyRatedRestaurants
+};
 
-// console.log(highlyRated(restaurants));
-// // I want you to think of ideas simple/hard and try implementing them
+console.log(highlyRated(restaurants));
+// I want you to think of ideas simple/hard and try implementing them
 
 // Implemented many ideas above as I thought of them (e.g., different methods to display data instead of always returning simple arrays. )
 
