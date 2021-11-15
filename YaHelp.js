@@ -137,8 +137,20 @@ console.log(printUser(user2));
 
 // create a method that takes a res and returns the menu of that res
 
+const printMenu = (res) => {
+  let menu = [];
+  res.dishes.forEach((dish)=>{
+    let ingredientList = [];
+    dish.ingredients.forEach((ingredient)=>{
+      ingredientList.push(`${ingredient}`)
+    });
+    let ingredientString = ingredientList.join(' and ');
+    menu.push(`${dish.name}:\n contains ${ingredientString}\n Price: $${dish.price}\n`)
+  });
+  return menu.join('')
+};
 
-
+console.log(printMenu(res1));
 
 // create a function that takes a res and returns average review
 
