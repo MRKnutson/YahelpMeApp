@@ -165,15 +165,42 @@ const averageReview = (res) => {
 
 console.log(averageReview(res2));
 
+
+
 // create an array of restaurants and do CRUD (Create, Read, Update, Destroy) actions on that array
 
-
-
+// array created above
 
 // Create: a method  that takes a restaurant and adds to your array
 
+let newRes = {
+  id: 3,
+  name: "Tony's",
+  location: {
+    city: "Kodiak",
+    state: "AK",
+  },
+  delivery: false,
+  days_open: "mon,tues,wed,thur,fri,sat",
+  likes: 12,
+  dishes: [
+    { name: "Burger", price: 16.85, ingredients: ["Burger", "Bun", "Lettuce"] },
+    { name: "Salad", price: 12.95, ingredients: ["lettuce", "Cheese", "Dressing"] },
+    { name: "King Crab", price: 52.95, ingredients: ["Crab", "Lemon-Butter", "Fries"] },
 
+  ],
+  reviews: [
+    {user_id: 1, rating: 2},
+    {user_id: 2, rating: 1},
+  ]
+}
 
+const addRes = (newRes) => {
+  restaurants.push(newRes);
+  return restaurants;
+};
+
+console.log(addRes(newRes));
 
 // Read: a method that display all res info
 
